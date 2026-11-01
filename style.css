@@ -12,6 +12,7 @@ header {
     color: #fff;
     padding: 2rem;
     text-align: center;
+    position: relative; /* needed for absolute button */
 }
 
 .tagline {
@@ -19,6 +20,29 @@ header {
     margin-top: .5rem;
 }
 
+/* Button for dark/light mode */
+.theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Dark mode */
+body.dark {
+    background-color: #121212;
+    color: #eee;
+}
+
+header.dark {
+    background: #111;
+}
+
+/* existing styles */
 section {
     max-width: 800px;
     margin: 2rem auto;
