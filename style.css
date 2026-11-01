@@ -5,19 +5,31 @@ body {
     line-height: 1.6;
     background-color: #fafafa;
     color: #333;
+    min-width: 0;
 }
 
 header {
     background: #0066cc;
     color: #fff;
-    padding: 2rem;
+    padding: clamp(2rem, 8vw, 4rem) 1rem;
     text-align: center;
     position: relative; /* needed for absolute button */
 }
 
+.tagline,
+h1 {
+    overflow-wrap: anywhere;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+}
+
 .tagline {
-    font-size: 1.2rem;
-    margin-top: .5rem;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    margin: .5rem auto 0;
+    max-width: 40rem;
 }
 
 /* Button for dark/light mode */
@@ -44,14 +56,16 @@ header.dark {
 
 /* existing styles */
 section {
+    box-sizing: border-box;
     max-width: 800px;
     margin: 2rem auto;
-    padding: 1rem;
+    padding: 0 1.25rem;
 }
 
 ul {
     list-style-type: disc;
-    margin-left: 1.5rem;
+    margin: 0;
+    padding-left: 1.25rem;
 }
 
 a {
@@ -60,4 +74,22 @@ a {
 }
 a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    header {
+        padding-right: 4rem;
+        padding-left: 1rem;
+    }
+
+    .theme-toggle {
+        top: 50%;
+        right: .75rem;
+        transform: translateY(-50%);
+    }
+
+    section {
+        margin: 1.5rem auto;
+        padding: 0 1rem;
+    }
 }
